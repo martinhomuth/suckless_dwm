@@ -1,0 +1,7 @@
+#+TITLE: Improvement list for dwm
+#+AUTHOR: Martin Homuth
+#+EMAIL: martin@followthestack.tech
+
+* TODO Allow configuration of initial layout
+  - also per monitor
+* TODO Create a method to select a client to be used as scratchpad
