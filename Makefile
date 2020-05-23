@@ -17,7 +17,7 @@ options:
 .c.o:
 	${CC} -c ${CFLAGS} $<
 
-${OBJ}: config.h config.mk
+${OBJ}: config.h config.mk selfrestart.c
 
 dwm: ${OBJ}
 	${CC} -o $@ ${OBJ} ${LDFLAGS}

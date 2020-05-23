@@ -2,64 +2,80 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <stdio.h>
+#include <string.h>
 #include <stdlib.h>
+#include <limits.h>
+
+#define BUF_SIZE PATH_MAX
+
+static char exe_path[BUF_SIZE];
 
 /**
- * Magically finds the current's executable path
- *
- * I'm doing the do{}while(); trick because Linux (what I'm running) is not
- * POSIX compilant and so lstat() cannot be trusted on /proc entries
- *
- * @return char* the path of the current executable
+ * Finds the current's executable path
  */
-char *get_dwm_path(){
-    struct stat s;
-    int r, length, rate = 42;
-    char *path = NULL;
+static void get_dwm_path()
+{
+	struct stat s;
+	ssize_t num_bytes;
+	char *arg = "/proc/self/exe";
 
-    if(lstat("/proc/self/exe", &s) == -1){
-        perror("lstat:");
-        return NULL;
-    }
+	if (lstat(arg, &s) == -1) {
+		perror("lstat:");
+		return;
+	}
+	if (!S_ISLNK(s.st_mode)) {
+		fprintf(stderr, "Error: Is not a symbolic link!\n");
+		exit(1);
+	}
 
-    length = s.st_size + 1 - rate;
+	num_bytes = readlink("/proc/self/exe", exe_path, BUF_SIZE - 1);
+	if (num_bytes < 0) {
+		perror("readlink:");
+		memset(exe_path, 0, BUF_SIZE);
+		return;
+	}
+	exe_path[num_bytes] = '\0';
 
-    do{
-        length+=rate;
+	/*
+	 * if the executable was deleted (e.g. because of recompile) the readlink
+	 * path contains "... (deleted)", cut it from the string to ensure we'll be
+	 * able to find the new executable
+	 */
+	char *tmp;
+	if ((tmp = strstr(exe_path, "(deleted)")) != NULL)
+		*(tmp-1) = '\0';
 
-        free(path);
-        path = malloc(sizeof(char) * length);
+	fprintf(stdout, "link path: %s\n", exe_path);
 
-        if(path == NULL){
-            perror("malloc:");
-            return NULL;
-        }
+	tmp = strdup(exe_path);
+	if (tmp == NULL) {
+		perror("strdup:");
+		return;
+	}
 
-        r = readlink("/proc/self/exe", path, length);
+	if (realpath(tmp, exe_path) == NULL) {
+		perror("realpath:");
+		memset(exe_path, 0, BUF_SIZE);
+		free(tmp);
+		return;
+	}
 
-        if(r == -1){
-            perror("readlink:");
-            return NULL;
-        }
-    }while(r >= length);
-
-    path[r] = '\0';
-
-    return path;
+	free(tmp);
 }
 
 /**
- * self-restart
- *
- * Initially inspired by: Yu-Jie Lin
- * https://sites.google.com/site/yjlnotes/notes/dwm
+ * Restarts the window manager if the path
+ * to the exe can be found
  */
-void self_restart(const Arg *arg) {
-    char *const argv[] = {get_dwm_path(), NULL};
+void self_restart(const Arg *arg)
+{
+	memset(exe_path, 0, sizeof(exe_path));
+	get_dwm_path();
 
-    if(argv[0] == NULL){
-        return;
-    }
+	if (strlen(exe_path) == 0)
+		return;
 
-    execv(argv[0], argv);
+	char * const argv[2] = { exe_path, NULL };
+
+	execv(argv[0], argv);
 }
