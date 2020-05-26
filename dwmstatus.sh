@@ -1,16 +1,15 @@
 #!/bin/bash
 
-set -x
+[ -n "${DEBUG}" ] && set -x
 
 DELIM=" | "
 SCRIPTDIR=${HOME}/.dwm/status
 declare -a SCRIPTS=(
-    'vpn'
+    'bluetooth'
     'battery'
+    'vpn'
     'time'
 )
-
-echo ${SCRIPTS[@]}
 
 while true;
 do
