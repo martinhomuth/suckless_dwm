@@ -48,6 +48,7 @@ static const Rule rules[] = {
 	{ "KeePassXC",NULL,       NULL,       0,            1,           -1 },
 	{ NULL,       NULL, "Welcome to Android Studio", 0, 1,           -1 },
 	{ NULL,       NULL, "Android Studio Setup Wizard", 0, 1,         -1 },
+	{ NULL,       "seafile-applet", NULL, 0,            1,           -1 },
 };
 
 /* layout(s) */
