@@ -49,6 +49,9 @@ static const Rule rules[] = {
 	{ NULL,       NULL, "Welcome to Android Studio", 0, 1,           -1 },
 	{ NULL,       NULL, "Android Studio Setup Wizard", 0, 1,         -1 },
 	{ NULL,       "seafile-applet", NULL, 0,            1,           -1 },
+	{ NULL,       NULL, "Authentication required", 0,   1,           -1 },
+	{ NULL,       NULL, "Unlock Keyring", 0,            1,           -1 },
+	{ NULL,       NULL, "calendar-edit:"  0,            1,           -1 },
 };
 
 /* layout(s) */
@@ -65,8 +68,8 @@ static const Layout layouts[] = {
 	{ "[M]",      monocle },
 	{ "|M|",      centeredmaster },
 	{ ">M>",      centeredfloatingmaster },
- 	{ "[@]",      spiral },
- 	{ "[\\]",      dwindle },
+	{ "[@]",      spiral },
+	{ "[\\]",     dwindle },
 	{ "###",      horizgrid },
 };
 
