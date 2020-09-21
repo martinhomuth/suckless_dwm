@@ -60,8 +60,10 @@ static const Rule rules[] = {
 	{ NULL,       NULL, "Authentication required", 0,   1,         0,         0,        -1 },
 	{ NULL,       NULL, "Unlock Keyring", 0,            1,         0,         0,        -1 },
 	{ NULL,       NULL, "calendar-edit:", 0,            1,         0,         0,        -1 },
+	{ "St",       NULL,       NULL,       0,            0,         1,         0,        -1 },
 	{ "xterm-256color", NULL, NULL,       0,            0,         1,         0,        -1 },
 	{ NULL,       NULL, "Event Tester",   0,            0,         0,         1,        -1 },
+	{ NULL,       NULL, "Android Virtual Device Manager", 0, 1,    0,         0,        -1 },
 };
 
 /* layout(s) */
