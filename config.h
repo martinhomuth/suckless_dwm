@@ -65,6 +65,9 @@ static const Rule rules[] = {
 	{ "xterm-256color", NULL, NULL,       0,            0,         1,         0,        -1 },
 	{ NULL,       NULL, "Event Tester",   0,            0,         0,         1,        -1 },
 	{ NULL,       NULL, "Android Virtual Device Manager", 0, 1,    0,         0,        -1 },
+	{ NULL,       NULL, "eGroupWare [Kalender - Hinzufügen] - Mozilla Firefox",
+	                                      0,            1,         0,         0,        -1 },
+	{ NULL,       "Msgcompose", NULL,     0,            1,         0,         0,        -1 },
 };
 
 /* layout(s) */
