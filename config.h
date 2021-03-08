@@ -123,6 +123,7 @@ static const char *termcmd[]  = { "st", NULL };
 static const char *explorercmd[] = { "thunar", NULL };
 static const char scratchpadname[] = "emacs-scratchpad";
 static const char *scratchpadcmd[] = { "emacs", "-T", scratchpadname, NULL };
+static const char *vpnmenucmd[] = { "vpnmenu", NULL };
 
 #include "selfrestart.c"
 
@@ -173,6 +174,7 @@ static Key keys[] = {
 	TAGKEYS(                        XK_9,                        8)
         { MODKEY|ShiftMask,             XK_r,      self_restart,     {0} },
 	{ MODKEY|ControlMask,           XK_q,      quit,             {0} },
+	{ MODKEY,                       XK_v,      spawn,            {.v = vpnmenucmd } },
 	/* { MODKEY|Mod4Mask,              XK_h,      incrgaps,       {.i = +1 } }, */
 	/* { MODKEY|Mod4Mask,              XK_l,      incrgaps,       {.i = -1 } }, */
 	/* { MODKEY|Mod4Mask|ShiftMask,    XK_h,      incrogaps,      {.i = +1 } }, */
