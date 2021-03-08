@@ -60,6 +60,7 @@ static const Rule rules[] = {
 	/* class      instance    title       tags-mask     isfloating isterminal noswallow monitor */
 	{ "Gimp",     NULL,       NULL,       0,            1,         0,         0,        -1 },
 	{ "Firefox",  NULL,       NULL,       1,            0,         0,         -1,       -1 },
+	{ "qutebrowser", NULL,    NULL,       1,            0,         0,         -1,       -1 },
 	{ "KeePassXC",NULL,       NULL,       0,            1,         0,         0,        -1 },
 	{ NULL,       NULL, "Welcome to Android Studio", 0, 1,         0,         0,        -1 },
 	{ NULL,       NULL, "Android Studio Setup Wizard", 0, 1,       0,         0,        -1 },
@@ -74,6 +75,7 @@ static const Rule rules[] = {
 	{ NULL,       NULL, "eGroupWare [Kalender - Hinzufügen] - Mozilla Firefox",
 	                                      0,            1,         0,         0,        -1 },
 	{ NULL,       "Msgcompose", NULL,     0,            1,         0,         0,        -1 },
+	{ "Steam",    NULL,       NULL,       0,            0,         0,         1,        -1 },
 };
 
 /* layout(s) */
