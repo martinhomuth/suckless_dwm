@@ -21,13 +21,9 @@ static const unsigned int gappov    = 10;       /* vert outer gap between window
 static const int smartgaps          = 0;        /* 1 means no outer gap when
 						   there is only one window */
 static const int showbar            = 1;        /* 0 means no bar */
-static const int topbar             = 1;        /* 0 means bottom bar */
+static const int topbar             = 0;        /* 0 means bottom bar */
 static const char *fonts[]          = {
-	"Mono:size=10:antialias=true:autohint=true",
-	"Font Awesome 5 Free:size=10",
-	"Hack:size=10",
-	"FontAwesome:size=10",
-	"Siji:size=10",
+	"monospace:size=10", "Hack:size=10", "JoyPixels:pixelsize=10:antialias=true:autohint=true",
 };
 static const char dmenufont[]       = "monospace:size=10";
 static const char normbgcolor[]           = "#282828";
@@ -63,6 +59,7 @@ static const Rule rules[] = {
     {"Firefox", NULL, NULL, 1, 0, 0, -1, -1},
     {"qutebrowser", NULL, NULL, 1, 0, 0, -1, -1},
     {"KeePassXC", NULL, NULL, 0, 1, 0, 0, -1},
+    {NULL, NULL, "Android Emulator - Pixel_3a_API_30:5554", 0, 1, 0, 0, -1},
     {NULL, NULL, "Welcome to Android Studio", 0, 1, 0, 0, -1},
     {NULL, NULL, "Android Studio Setup Wizard", 0, 1, 0, 0, -1},
     {NULL, "seafile-applet", NULL, 0, 1, 0, 0, -1},
@@ -81,7 +78,7 @@ static const Rule rules[] = {
     {"Steam", NULL, NULL, 0, 0, 0, 1, -1},
     {"Calendar", NULL, NULL, 0, 1, 0, 0, -1},
     {"Pavucontrol", NULL, NULL, 0, 1, 0, 0, -1},
-    {"Spotify", NULL, NULL, 5, 0, 0, 0, 1},
+    {"Spotify", NULL, NULL, 16, 0, 0, 0, 1},
 };
 
 /* layout(s) */
