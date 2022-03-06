@@ -125,6 +125,7 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
 static const char *termcmd[]  = { "st", NULL };
+static const char *browsercmd[] = { "qutebrowser", NULL };
 static const char *explorercmd[] = { "thunar", NULL };
 static const char scratchpadname[] = "emacs-scratchpad";
 static const char *scratchpadcmd[] = { "emacs", "-T", scratchpadname, NULL };
@@ -137,7 +138,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_d,      spawn,            {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return, spawn,            {.v = termcmd } },
 	{ MODKEY,                       XK_o,      togglescratch,    {.v = scratchpadcmd } },
-	{ MODKEY,                       XK_b,      togglebar,        {0} },
+	{ MODKEY,                       XK_b,      spawn,            {.v = browsercmd } },
 	STACKKEYS(MODKEY,                          focus)
 	STACKKEYS(MODKEY|ShiftMask,                push)
 	{ MODKEY,                       XK_h,      setmfact,         {.f = -0.05} },
