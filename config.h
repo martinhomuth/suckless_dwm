@@ -132,7 +132,7 @@ static const char *browsercmd[] = { "qutebrowser", NULL };
 static const char *explorercmd[] = { "thunar", NULL };
 static const char scratchpadname[] = "emacs-scratchpad";
 static const char *scratchpadcmd[] = { "emacs", "-T", scratchpadname, NULL };
-static const char *vpnmenucmd[] = { "vpnmenu", NULL };
+static const char *vpnmenucmd[] = { "vpnmenu", "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
 
 #include "selfrestart.c"
 
