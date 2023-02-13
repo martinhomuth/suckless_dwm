@@ -1,5 +1,8 @@
 /* See LICENSE file for copyright and license details. */
 
+/* tools to use */
+#define BROWSER "qutebrowser"
+
 /* appearance */
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
@@ -61,6 +64,7 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *termcmd[]  = { "st", NULL };
 static const char scratchpadname[] = "emacs-scratchpad";
 static const char *scratchpadcmd[] = { "emacs", "-T", scratchpadname, NULL };
+static const char *browsercmd[] = { BROWSER, NULL };
 
 #include "selfrestart.c"
 static const Key keys[] = {
@@ -99,6 +103,7 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ControlMask,           XK_q,      quit,           {0} },
 	{ MODKEY|ShiftMask,             XK_r,      self_restart,   {0} },
+	{ MODKEY,                       XK_b,      spawn,          {.v = browsercmd } },
 };
 
 /* button definitions */
