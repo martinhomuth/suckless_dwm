@@ -17,7 +17,7 @@ options:
 .c.o:
 	${CC} -c ${CFLAGS} $<
 
-${OBJ}: config.h config.mk
+${OBJ}: config.h config.mk selfrestart.c
 
 config.h: config.def.h
 	cp config.def.h $@

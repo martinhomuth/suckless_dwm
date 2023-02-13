@@ -62,6 +62,7 @@ static const char *termcmd[]  = { "st", NULL };
 static const char scratchpadname[] = "emacs-scratchpad";
 static const char *scratchpadcmd[] = { "emacs", "-T", scratchpadname, NULL };
 
+#include "selfrestart.c"
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
@@ -97,6 +98,7 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ControlMask,           XK_q,      quit,           {0} },
+	{ MODKEY|ShiftMask,             XK_r,      self_restart,   {0} },
 };
 
 /* button definitions */
@@ -115,4 +117,3 @@ static const Button buttons[] = {
 	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
 	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
 };
-
