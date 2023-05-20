@@ -36,6 +36,23 @@ static const Rule rules[] = {
 	{ "Gimp",     NULL,       NULL,       0,            1,         0,         0,        -1 },
 	{ "Firefox",  NULL,       NULL,       1,            0,         0,         -1,       -1 },
 	{ "KeePassXC",NULL,       NULL,       0,            1,         0,         0,        -1 },
+	{NULL, "seafile-applet", NULL, 0, 1, 0, 0, -1},
+	{NULL, NULL, "Authentication required", 0, 1, 0, 0, -1},
+	{NULL, NULL, "Unlock Keyring", 0, 1, 0, 0, -1},
+	{NULL, NULL, "calendar-edit:", 0, 1, 0, 0, -1},
+	{"St", NULL, NULL, 0, 0, 1, 0, -1},
+	{"xterm-256color", NULL, NULL, 0, 0, 1, 1, -1},
+	{"xterm", NULL, NULL, 0, 0, 1, 1, -1},
+	{NULL, "xterm", NULL, 0, 0, 1, 1, -1},
+	{NULL, NULL, "Event Tester", 0, 0, 0, 1, -1},
+	{NULL, NULL, "Android Virtual Device Manager", 0, 1, 0, 0, -1},
+	{NULL, NULL, "eGroupWare [Kalender - Hinzufügen] - Mozilla Firefox", 0, 1,
+	 0, 0, -1},
+	{NULL, "Msgcompose", NULL, 0, 1, 0, 0, -1},
+	{"Steam", NULL, NULL, 0, 0, 0, 1, -1},
+	{"Calendar", NULL, NULL, 0, 1, 0, 0, -1},
+	{"Pavucontrol", NULL, NULL, 0, 1, 0, 0, -1},
+	{"Spotify", NULL, NULL, 16, 0, 0, 0, 1},
 };
 
 /* layout(s) */
