@@ -11,7 +11,7 @@ all: dwm
 .c.o:
 	${CC} -c ${CFLAGS} $<
 
-${OBJ}: config.h config.mk selfrestart.c
+${OBJ}: config.h config.mk selfrestart.c themes/gruvbox.h
 
 config.h: config.def.h
 	cp config.def.h $@
