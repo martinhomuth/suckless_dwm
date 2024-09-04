@@ -20,7 +20,7 @@ static const char dmenufont[]       = "monospace:size=8";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { gray3,     black,     gray2 },
-	[SchemeSel]  = { gray4,     gray2,     black },
+	[SchemeSel]  = { black,     yellow,    yellow },
 };
 
 /* tagging */
@@ -88,7 +88,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", black, "-nf", gray3, "-sb", blue, "-sf", gray4, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", black, "-nf", gray3, "-sb", yellow, "-sf", black, NULL };
 static const char *termcmd[]  = { TERMINAL, NULL };
 static const char scratchpadname[] = "emacs-scratchpad";
 static const char *scratchpadcmd[] = { "emacs", "-T", scratchpadname, NULL };
