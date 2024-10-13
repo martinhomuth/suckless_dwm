@@ -93,6 +93,7 @@ static const char *termcmd[]  = { TERMINAL, NULL };
 static const char scratchpadname[] = "emacs-scratchpad";
 static const char *scratchpadcmd[] = { "emacs", "-T", scratchpadname, NULL };
 static const char *browsercmd[] = { BROWSER, NULL };
+static const char *vpnmenucmd[] = { "vpnmenu", "-fn", dmenufont, "-nb", black, "-nf", gray3, "-sb", yellow, "-sf", black, NULL };
 
 #include "selfrestart.c"
 static const Key keys[] = {
@@ -132,6 +133,7 @@ static const Key keys[] = {
 	{ MODKEY|ControlMask,           XK_q,      quit,           {0} },
 	{ MODKEY|ShiftMask,             XK_r,      self_restart,   {0} },
 	{ MODKEY,                       XK_b,      spawn,          {.v = browsercmd } },
+	{ MODKEY,                       XK_v,      spawn,          {.v = vpnmenucmd } },
 };
 
 /* button definitions */
