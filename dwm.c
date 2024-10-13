@@ -2295,12 +2295,15 @@ getparentprocess(pid_t p)
 #ifdef __linux__
 	FILE *f;
 	char buf[256];
+	int num_matched = 0;
 	snprintf(buf, sizeof(buf) - 1, "/proc/%u/stat", (unsigned)p);
 
 	if (!(f = fopen(buf, "r")))
 		return 0;
 
-	fscanf(f, "%*u %*s %*c %u", &v);
+	num_matched = fscanf(f, "%*u %*s %*c %u", &v);
+	if (num_matched != 4)
+		fprintf(stderr, "dwm: warning: matched %d instead of 4 during fscanf\n", num_matched);
 	fclose(f);
 #endif /* __linux__*/
 
