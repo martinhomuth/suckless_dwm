@@ -28,8 +28,8 @@ LIBS = -L${X11LIB} -lX11 ${XINERAMALIBS} ${FREETYPELIBS} -lX11-xcb -lxcb -lxcb-r
 
 # flags
 CPPFLAGS = -D_DEFAULT_SOURCE -D_BSD_SOURCE -D_XOPEN_SOURCE=700L -DVERSION=\"${VERSION}\" ${XINERAMAFLAGS}
-CFLAGS   = -std=c2x -pedantic -Wall -Werror -Wno-deprecated-declarations -fanalyzer -fsanitize=address -Os ${INCS} ${CPPFLAGS}
-LDFLAGS  = ${LIBS} -fsanitize=address
+CFLAGS   = -std=c2x -pedantic -Wall -Werror -Wno-deprecated-declarations -fanalyzer -Os ${INCS} ${CPPFLAGS}
+LDFLAGS  = ${LIBS}
 
 # Solaris
 #CFLAGS = -fast ${INCS} -DVERSION=\"${VERSION}\"
