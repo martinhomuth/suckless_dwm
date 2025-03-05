@@ -52,6 +52,7 @@ static const Rule rules[] = {
 	{"Calendar", NULL, NULL, 0, 1, 0, 0, -1},
 	{"Pavucontrol", NULL, NULL, 0, 1, 0, 0, -1},
 	{"Spotify", NULL, NULL, 16, 0, 0, 0, 1},
+	{"Authenticator", NULL, NULL, 0, 1, 0, 1, -1},
 };
 
 /* layout(s) */
