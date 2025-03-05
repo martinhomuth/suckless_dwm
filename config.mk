@@ -8,7 +8,7 @@ PREFIX = /usr/local
 MANPREFIX = ${PREFIX}/share/man
 
 X11INC = /usr/include
-X11LIB = /usr/lib
+X11LIB = /usr/lib64
 
 # Xinerama, comment if you don't want it
 XINERAMALIBS  = -lXinerama
