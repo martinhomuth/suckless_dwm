@@ -47,6 +47,7 @@ static const Rule rules[] = {
 	{NULL, NULL, "Android Virtual Device Manager", 0, 1, 0, 0, -1},
 	{NULL, NULL, "eGroupWare [Kalender - Hinzufügen] - Mozilla Firefox", 0, 1,
 	 0, 0, -1},
+	{NULL, "Alert", NULL, 0, 1, 0, 0, -1},
 	{NULL, "Msgcompose", NULL, 0, 1, 0, 0, -1},
 	{"Steam", NULL, NULL, 0, 0, 0, 1, -1},
 	{"Calendar", NULL, NULL, 0, 1, 0, 0, -1},
