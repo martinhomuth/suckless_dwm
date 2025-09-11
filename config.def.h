@@ -98,6 +98,7 @@ static const char *scratchpadcmd[] = { "emacs", "-T", scratchpadname, NULL };
 static const char *browsercmd[]    = { BROWSER, NULL };
 static const char *vpnmenucmd[]    = { "vpnmenu", "-fn", dmenufont, "-nb", black, "-nf", gray3, "-sb", yellow, "-sf", black, NULL };
 static const char *lockcmd[]       = { "i3lock", NULL };
+static const char *volumecmd[]     = { "st", "-c", "volumecontrol", "-t", "VolumeControl", "-e", "wiremix", NULL };
 
 #include "selfrestart.c"
 static const Key keys[] = {
@@ -129,6 +130,7 @@ static const Key keys[] = {
         { MODKEY | ShiftMask, XK_r, self_restart, { 0 } },
         { MODKEY, XK_b, spawn, { .v = browsercmd } },
         { MODKEY, XK_v, spawn, { .v = vpnmenucmd } },
+	{ MODKEY, XK_a, spawn, { .v = volumecmd } },
         { MODKEY, XK_grave, spawn, { .v = lockcmd } },
 };
 
