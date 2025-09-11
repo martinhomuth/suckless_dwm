@@ -102,8 +102,8 @@ static const char *lockcmd[]       = { "i3lock", NULL };
 #include "selfrestart.c"
 static const Key keys[] = {
         /* modifier                     key        function        argument */
-        { MODKEY, XK_d, spawn, { .v = dmenucmd } },
-        { MODKEY, XK_Return, spawn, { .v = termcmd } },
+        { MODKEY, XK_space, spawn, { .v = dmenucmd } },
+        { MODKEY, XK_t, spawn, { .v = termcmd } },
         { MODKEY, XK_o, togglescratch, { .v = scratchpadcmd } },
         { MODKEY, XK_p, incnmaster, { .i = +1 } },
         { MODKEY | ShiftMask, XK_p, incnmaster, { .i = -1 } },
@@ -111,16 +111,17 @@ static const Key keys[] = {
         STACKKEYS(MODKEY, focus) STACKKEYS(MODKEY | ShiftMask, push){ MODKEY, XK_l, setmfact, { .f = +0.05 } },
         { MODKEY, XK_f, fullscreen, { 0 } },
         { MODKEY, XK_Tab, view, { 0 } },
-        { MODKEY | ShiftMask, XK_c, killclient, { 0 } },
+        { MODKEY, XK_w, killclient, { 0 } },
         { MODKEY, XK_F1, setlayout, { .v = &layouts[0] } },
         { MODKEY, XK_F2, setlayout, { .v = &layouts[1] } },
         { MODKEY, XK_F3, setlayout, { .v = &layouts[2] } },
-        { MODKEY, XK_space, setlayout, { 0 } },
+        { MODKEY, XK_F4, setlayout, { .v = &layouts[2] } },
+        { MODKEY, XK_F5, setlayout, { .v = &layouts[2] } },
         { MODKEY | ShiftMask, XK_space, togglefloating, { 0 } },
         { MODKEY, XK_0, view, { .ui = ~0 } },
         { MODKEY | ShiftMask, XK_0, tag, { .ui = ~0 } },
         { MODKEY, XK_q, focusmon, { .i = -1 } },
-        { MODKEY, XK_w, focusmon, { .i = +1 } },
+        { MODKEY, XK_r, focusmon, { .i = +1 } },
         { MODKEY | ShiftMask, XK_comma, tagmon, { .i = -1 } },
         { MODKEY | ShiftMask, XK_period, tagmon, { .i = +1 } },
         TAGKEYS(XK_1, 0) TAGKEYS(XK_2, 1) TAGKEYS(XK_3, 2) TAGKEYS(XK_4, 3) TAGKEYS(XK_5, 4) TAGKEYS(XK_6, 5) TAGKEYS(XK_7, 6)
@@ -128,7 +129,7 @@ static const Key keys[] = {
         { MODKEY | ShiftMask, XK_r, self_restart, { 0 } },
         { MODKEY, XK_b, spawn, { .v = browsercmd } },
         { MODKEY, XK_v, spawn, { .v = vpnmenucmd } },
-        { MODKEY, XK_l, spawn, { .v = lockcmd } },
+        { MODKEY, XK_grave, spawn, { .v = lockcmd } },
 };
 
 /* button definitions */
