@@ -37,7 +37,7 @@ static const Rule rules[] = {
         /* class      instance    title       tags-mask     isfloating isterminal noswallow monitor */
         { "Gimp", NULL, NULL, 0, 1, 0, 0, -1 },
         { "Firefox", NULL, NULL, 1, 0, 0, -1, -1 },
-        { "KeePassXC", NULL, NULL, 0, 1, 0, 0, -1 },
+        { "KeePassXC", NULL, NULL, 256, 1, 0, 0, -1 },
         { NULL, "seafile-applet", NULL, 0, 1, 0, 0, -1 },
         { NULL, NULL, "Authentication required", 0, 1, 0, 0, -1 },
         { NULL, NULL, "Unlock Keyring", 0, 1, 0, 0, -1 },
@@ -56,6 +56,9 @@ static const Rule rules[] = {
         { "Pavucontrol", NULL, NULL, 0, 1, 0, 0, -1 },
         { "Spotify", NULL, NULL, 16, 0, 0, 0, 1 },
         { "Authenticator", NULL, NULL, 0, 1, 0, 1, -1 },
+	{ "Signal", NULL, NULL, 128, 0, 0, 1, -1 },
+	{ "thunderbird", NULL, NULL, 2, 0, 0, 1, -1 },
+	{ "volumecontrol", NULL, NULL, 0, 1, 1, 1, -1 },
 };
 
 /* layout(s) */
