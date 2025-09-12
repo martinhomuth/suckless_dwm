@@ -14,7 +14,7 @@ command -v Xephyr || error "error: Xephyr not installed"
 
 make -j$(nproc)
 
-Xephyr -screen 1024x768 :1 &
-sleep 0.1
-DISPLAY=:1 ./dwm
+Xephyr +xinerama -screen 1024x768 -screen 1024x768 -ac :1 &
+sleep 0.5
+DISPLAY=:1.0 ./dwm
 
