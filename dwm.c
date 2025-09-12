@@ -1728,10 +1728,36 @@ void togglefloating(const Arg *arg) {
 void togglescratch(const Arg *arg) {
         Client *c;
         unsigned int found = 0;
+	Monitor *mon = selmon;
 
-        for (c = selmon->clients; c && !(found = c->tags & scratchtag); c = c->next)
-                ;
+	// find scratchpad across all monitors
+	Monitor *m;
+	for (m = mons; m && !found; m = m->next)
+		for (c = m->clients; c && !(found = c->tags & scratchtag); c = c->next)
+			;
         if (found) {
+		if (c->mon != mon) {
+			// remove from old monitor
+			unfocus(c, 1);
+			detach(c);
+			detachstack(c);
+
+			// attach to current monitor
+			c->mon = mon;
+			attach(c);
+			attachstack(c);
+
+                        // Calculate appropriate size for new monitor
+                        int new_w = (int)(mon->ww * 0.95);
+                        int new_h = (int)(mon->wh * 0.9);
+
+                        // Center the scratchpad on new monitor
+                        int new_x = mon->wx + (mon->ww / 2 - new_w / 2);
+                        int new_y = mon->wy + (mon->wh / 2 - new_h / 2);
+
+                        // Use resize() instead of resizeclient() - it handles size constraints
+                        resize(c, new_x, new_y, new_w, new_h, 0);
+		}
                 unsigned int newtagset = selmon->tagset[selmon->seltags] ^ scratchtag;
                 if (newtagset) {
                         selmon->tagset[selmon->seltags] = newtagset;
