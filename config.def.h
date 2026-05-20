@@ -1,8 +1,8 @@
 /* See LICENSE file for copyright and license details. */
 
 /* tools to use */
-#define BROWSER  "qutebrowser"
-#define TERMINAL "st"
+#define BROWSER  "chromium"
+#define TERMINAL "alacritty"
 
 /* appearance */
 static const unsigned int borderpx = 1;  /* border pixel of windows */
@@ -101,7 +101,7 @@ static const char *scratchpadcmd[] = { "emacs", "-T", scratchpadname, NULL };
 static const char *browsercmd[]    = { BROWSER, NULL };
 static const char *vpnmenucmd[]    = { "vpnmenu", "-fn", dmenufont, "-nb", black, "-nf", gray3, "-sb", yellow, "-sf", black, NULL };
 static const char *lockcmd[]       = { "i3lock", NULL };
-static const char *volumecmd[]     = { "st", "-c", "volumecontrol", "-t", "VolumeControl", "-e", "wiremix", NULL };
+static const char *volumecmd[]     = { "st", "-c", "volumecontrol", "-t", "VolumeControl", "-e", "alsamixer", NULL };
 
 #include "selfrestart.c"
 static const Key keys[] = {
